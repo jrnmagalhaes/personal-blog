@@ -1,5 +1,7 @@
 import Head from 'next/head';
-import { homePageDocs } from '../lib/docs';
+import { PostSummary } from '../components';
+import { getAllDocsSorteByDate } from '../lib/docs';
+import { formatDate } from '../lib/utils';
 
 export default function Home({ posts }) {
   return (
@@ -10,14 +12,25 @@ export default function Home({ posts }) {
       </Head>
       <main>
         <h1>Blog Pessoal</h1>
-        {posts.map(post => post.meta.title)}
+        <div className='posts'>
+          {posts.map(post =>
+            <PostSummary
+              key={`post-home-${post.meta.title}`}
+              title={post.meta.title}
+              description={post.meta.description}
+              image={post.meta.image}
+              time={formatDate(post.time)}
+              link={`/${post.slug}`}
+            />
+          )}
+        </div>
       </main>
     </>
   )
 }
 
 export async function getStaticProps() {
-  const posts = homePageDocs();
+  const posts = getAllDocsSorteByDate();
   return {
     props: {
       posts: posts

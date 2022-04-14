@@ -70,7 +70,7 @@ aside .icon-container {
 main {
   overflow-y: auto;
   flex: 1;
-  padding: 4rem;
+  padding: 4rem 16rem 4rem 4rem;
 }
 
 /* SCROLL BAR */
@@ -156,22 +156,22 @@ h1 {
 
 h2 {
   font-size: 7rem;
-  margin: 5rem 0;
+  margin: 0 0 5rem 0;
 }
 
 h3 {
   font-size: 6rem;
-  margin: 4rem 0;
+  margin: 0 0 4rem 0;
 }
 
 h4 {
   font-size: 5rem;
-  margin: 3rem 0;
+  margin: 0 0 3rem 0;
 }
 
 h5 {
   font-size: 4rem;
-  margin: 2.5rem 0;
+  margin: 0 0 2rem 0;
 }
 
 h6 {
@@ -197,6 +197,55 @@ aside p {
   font-size: 1.5rem;
 }
 
+.posts article h2 {
+  font-size: 4rem;
+  margin-bottom: .5rem;
+  color: var(--text-color);
+}
+
+.posts article h3 {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.posts article h4 {
+  font-size: 2em;
+  margin-bottom: .5em;
+  color: var(--secondary-color);
+}
+
+/* POSTS */
+.posts .post-summary {
+  margin-bottom: 2rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.posts .post-summary:hover {
+  cursor: pointer;
+}
+
+.posts .post-summary:hover h2 {
+  color: var(--primary-color);
+}
+
+.posts .post-summary article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.posts .post-summary article .image-container {
+  width: 16rem;
+  height: 16rem;
+  margin-left: 1rem;
+  flex-shrink: 0;
+  border-radius: 1rem;
+  position: relative;
+}
+
+
 /* BUTTONS */
 button {
   background-color: transparent;
@@ -221,9 +270,9 @@ button.icon span {
 
 /* AVATAR */
 .avatar {
-  padding: 8px;
-  width: 150px;
-  height: 150px;
+  padding: 1rem;
+  width: 16rem;
+  height: 16rem;
   border-radius: 50%;
 }
 
