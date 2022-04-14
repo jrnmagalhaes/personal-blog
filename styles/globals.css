@@ -1,5 +1,10 @@
+/* GENERAL */
 * {
   box-sizing: border-box;
+}
+
+html {
+  font-size: 8px;
 }
 
 html,
@@ -10,7 +15,181 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+/* STRUCTURAL */
+.container {
+  --primary-color: #BF6415;
+  --secondary-color: #8C503A;
+  --text-color: #052533;
+  --color-contrast: #FAF2EC;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  color: var(--text-color);
+  background-color: var(--color-contrast);
+}
+
+.container.night {
+  --color-contrast: #052533;
+  --text-color: #FAF2EC;
+}
+
+aside {
+  flex-basis: 40rem;
+  padding: 2rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+aside .icon-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+main {
+  overflow-y: auto;
+  flex: 1;
+  padding: 4rem;
+}
+
+/* NEUMORPHISM */
+.up {
+  box-shadow: 8px 8px 16px #787471,
+    -8px -8px 16px #ffffff;
+}
+
+.up.hoverable:hover {
+  box-shadow: 8px 8px 32px #787471,
+    -8px -8px 32px #ffffff;
+  cursor: pointer;
+}
+
+.down {
+  box-shadow: inset 8px 8px 16px #787471,
+    inset -8px -8px 16px #ffffff;
+}
+
+.down.hoverable:hover {
+  box-shadow: inset 8px 8px 32px #787471,
+    inset -8px -8px 32px #ffffff;
+  cursor: pointer;
+}
+
+.container.night .up {
+  box-shadow: 8px 8px 32px #031922,
+    -8px -8px 32px #073144;
+}
+
+.container.night .up.hoverable:hover {
+  box-shadow: 8px 8px 16px #031922,
+    -8px -8px 32px #073144;
+}
+
+.container.night .down {
+  box-shadow: inset 8px 8px 32px #031922,
+    inset -8px -8px 32px #073144;
+}
+
+.container.night .down.hoverable:hover {
+  box-shadow: inset 8px 8px 16px #031922,
+    inset -8px -8px 16px #073144;
+}
+
+/* TYPOGRAPHY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-color);
+}
+
+h6 small,
+h1 small {
+  color: var(--secondary-color);
+}
+
+h1 {
+  font-size: 8rem;
+  margin: 6rem 0;
+}
+
+h2 {
+  font-size: 7rem;
+  margin: 5rem 0;
+}
+
+h3 {
+  font-size: 6rem;
+  margin: 4rem 0;
+}
+
+h4 {
+  font-size: 5rem;
+  margin: 3rem 0;
+}
+
+h5 {
+  font-size: 4rem;
+  margin: 2.5rem 0;
+}
+
+h6 {
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+h6 small {
+  font-size: 2rem;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+}
+
+p {
+  font-size: 2rem;
+  line-height: 1.7;
+}
+
+aside p {
+  font-size: 1.5rem;
+}
+
+/* BUTTONS */
+button {
+  background-color: transparent;
+  border: none;
+}
+
+button.icon {
+  width: 5rem;
+  height: 5rem;
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+/* AVATAR */
+.avatar {
+  padding: 8px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.avatar.mini {
+  width: 50px;
+  height: 50px;
+  padding: 4px;
+}
+
+.avatar img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
 }
