@@ -142,6 +142,7 @@ h4,
 h5,
 h6 {
   color: var(--primary-color);
+  line-height: 1;
 }
 
 h6 small,
@@ -215,6 +216,42 @@ aside p {
   color: var(--secondary-color);
 }
 
+article.post h1 {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+}
+
+article.post h2 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+article.post h3 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+article.post h4 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+article.post h5,
+article.post h6 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+article.post h6.date {
+  color: #787471;
+}
+
+article.post pre span {
+  font-size: 2rem;
+  line-height: 1.7;
+}
+
+
 /* POSTS */
 .posts .post-summary {
   margin-bottom: 2rem;
@@ -244,7 +281,6 @@ aside p {
   border-radius: 1rem;
   position: relative;
 }
-
 
 /* BUTTONS */
 button {

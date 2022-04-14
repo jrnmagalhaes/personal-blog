@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '../styles/darcula.css';
 import React from 'react';
 import { SideBar, Container, Header } from '../components';
 
