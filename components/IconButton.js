@@ -3,7 +3,7 @@ import { Twitter, Instagram, Linkedin, Sun, Moon } from './Icons';
 
 
 
-const IconButton = ({ link, iconName = 'sun' }) => {
+const IconButton = ({ onClick, iconName = 'sun', text }) => {
   const icons = {
     sun: <Sun />,
     moon: <Moon />,
@@ -13,8 +13,9 @@ const IconButton = ({ link, iconName = 'sun' }) => {
   }
   const renderIcon = () => icons[iconName] ?? '';
   return (
-    <button className='up hoverable icon'>
+    <button onClick={onClick} className='up hoverable icon'>
       {renderIcon()}
+      {text && <span>{text}</span>}
     </button>
   )
 }

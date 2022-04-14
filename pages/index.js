@@ -1,7 +1,8 @@
-import Head from 'next/head'
-import { homePageDocs } from '../lib/docs'
+import Head from 'next/head';
+import { homePageDocs } from '../lib/docs';
+import { IconButton } from '../components';
 
-export default function Home({ posts }) {
+export default function Home({ posts, toggleNightMode, currentMode }) {
   return (
     <>
       <Head>
@@ -10,11 +11,7 @@ export default function Home({ posts }) {
       </Head>
       <main>
         <h1>Blog Pessoal</h1>
-        <h2>Teste h2</h2>
-        <h3>Teste h3</h3>
-        <h4>Teste h4</h4>
-        <h5>Teste h5</h5>
-        <h6>Teste h6</h6>
+        <IconButton onClick={toggleNightMode} iconName='sun' text={currentMode} />
         {posts.map(post => post.meta.title)}
       </main>
     </>
