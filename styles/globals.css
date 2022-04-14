@@ -21,16 +21,33 @@ body {
   --secondary-color: #8C503A;
   --text-color: #052533;
   --color-contrast: #FAF2EC;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
+  --header-height: 7rem;
   color: var(--text-color);
   background-color: var(--color-contrast);
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 .container.night {
   --color-contrast: #052533;
   --text-color: #FAF2EC;
+}
+
+.container>section {
+  flex: 1;
+  max-height: calc(100vh - var(--header-height));
+  display: flex;
+}
+
+header {
+  width: 100vw;
+  height: var(--header-height);
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
 aside {
@@ -54,6 +71,24 @@ main {
   overflow-y: auto;
   flex: 1;
   padding: 4rem;
+}
+
+/* SCROLL BAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
 }
 
 /* NEUMORPHISM */
@@ -116,7 +151,7 @@ h1 small {
 
 h1 {
   font-size: 8rem;
-  margin: 6rem 0;
+  margin: 0 0 6rem 0;
 }
 
 h2 {
@@ -178,6 +213,10 @@ button.icon {
   display: flex;
   align-items: center;
   border-radius: 2.5rem;
+}
+
+button.icon span {
+  margin-left: 1rem;
 }
 
 /* AVATAR */

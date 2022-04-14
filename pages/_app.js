@@ -1,9 +1,9 @@
 import '../styles/globals.css';
 import React from 'react';
-import { SideBar, Container } from '../components';
+import { SideBar, Container, Header } from '../components';
 
 function MyApp({ Component, pageProps }) {
-  const possibleModes = React.useMemo(() => ['dark', 'light', 'system'], []);
+  const possibleModes = React.useMemo(() => ['Escuro', 'Claro', 'Sistema'], []);
   const nightModeItemName = 'nightMode';
   const [currentMode, setCurrentMode] = React.useState(null);
   const [nightMode, setNightMode] = React.useState(false);
@@ -11,7 +11,6 @@ function MyApp({ Component, pageProps }) {
   React.useEffect(() => {
     const localStorageNightMode = localStorage.getItem(nightModeItemName);
     if (localStorageNightMode != undefined) {
-      console.log("INDEX OF: ", possibleModes.indexOf(localStorageNightMode))
       setCurrentMode(possibleModes.indexOf(localStorageNightMode));
     } else {
       setCurrentMode(2)
@@ -22,11 +21,13 @@ function MyApp({ Component, pageProps }) {
     if (currentMode != null) {
       if (currentMode !== 2) {
         setNightMode(currentMode === 1 ? false : true);
+        localStorage.setItem(nightModeItemName, possibleModes[currentMode]);
       } else {
         getSystemNightMode();
+        localStorage.removeItem(nightModeItemName);
       }
     }
-  }, [currentMode])
+  }, [currentMode, possibleModes])
 
   const getSystemNightMode = () => {
     if (window.matchMedia) {
@@ -35,11 +36,6 @@ function MyApp({ Component, pageProps }) {
   }
 
   const toggleNightMode = () => {
-    if (currentMode == 1) {
-      localStorage.removeItem(nightModeItemName);
-    } else {
-      localStorage.setItem(nightModeItemName, possibleModes[currentMode]);
-    }
     if (currentMode == 2) {
       setCurrentMode(0)
     } else {
@@ -47,14 +43,14 @@ function MyApp({ Component, pageProps }) {
     }
   }
 
-  pageProps.toggleNightMode = toggleNightMode;
-  pageProps.currentMode = possibleModes[currentMode];
-
   return (
     <>
       <Container night={nightMode}>
-        <SideBar />
-        <Component {...pageProps} />
+        <Header night={nightMode} currentMode={possibleModes[currentMode]} toggleNightMode={toggleNightMode} />
+        <section>
+          <SideBar />
+          <Component {...pageProps} />
+        </section>
       </Container>
     </>
   )
