@@ -40,7 +40,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }) {
   const file = getDocBySlug(slug);
   const content = await markdownToHtml(file.content);
-  console.log(content);
   return {
     props: {
       slug,
