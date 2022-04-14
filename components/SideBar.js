@@ -16,9 +16,15 @@ const SideBar = () => {
         </p>
       </div>
       <div className='icon-container'>
-        <IconButton iconName='instagram' />
-        <IconButton iconName='twitter' />
-        <IconButton iconName='linkedin' />
+        <a target="_blank" rel='noreferrer' href="https://twitter.com/jrnmagalhaes">
+          <IconButton iconName='twitter' />
+        </a>
+        <a target="_blank" rel='noreferrer' href="https://www.instagram.com/ricardonmagalhaes">
+          <IconButton iconName='instagram' />
+        </a>
+        <a target="_blank" rel='noreferrer' href="https://www.linkedin.com/in/jrnmagalhaes/">
+          <IconButton iconName='linkedin' />
+        </a>
       </div>
     </aside>
   )
