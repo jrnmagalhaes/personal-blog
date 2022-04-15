@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import React from 'react';
 
 const PostSummary = ({ title, description, image, time, link }) => {
@@ -14,7 +13,7 @@ const PostSummary = ({ title, description, image, time, link }) => {
               <h3>{description}</h3>
             </div>
             <div className='image-container'>
-              {image && <Image alt={`${title} | Image cover`} layout="fill" objectFit='contain' src={image} />}
+              {image && <img alt={`${title} | Image cover`} src={image} />}
             </div>
           </article>
         </div>

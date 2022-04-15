@@ -1,7 +1,7 @@
 ---
 title: teste 3 um título bem maior do que o que costuma ser, vamos continuar testando títulos longos
 description: O que é? O que faz? Como funciona? Do que se alimenta? Sexta, no Globo Reporter!
-image: /images/devops-visao-geral.png
+image: images/devops-visao-geral.png
 ---
 
 ## Dívida técnica
