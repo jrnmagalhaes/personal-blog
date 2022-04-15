@@ -1,5 +1,5 @@
 import React from 'react';
-import { Twitter, Instagram, Linkedin, Sun, Moon } from './Icons';
+import { Twitter, Instagram, Linkedin, Sun, Moon, Logo } from './Icons';
 
 
 
@@ -10,6 +10,7 @@ const IconButton = ({ onClick, iconName = 'sun', text }) => {
     linkedin: <Linkedin />,
     instagram: <Instagram />,
     twitter: <Twitter />,
+    logo: <Logo />,
   }
   const renderIcon = () => icons[iconName] ?? '';
   return (
