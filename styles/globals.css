@@ -24,7 +24,7 @@ body {
   --header-height: 7rem;
   color: var(--text-color);
   background-color: var(--color-contrast);
-  height: 100vh;
+  min-height: 100vh;
   max-height: 100vh;
   width: 100vw;
   display: flex;
@@ -70,12 +70,13 @@ aside .icon-container {
 main {
   overflow-y: auto;
   flex: 1;
-  padding: 4rem 16rem 4rem 4rem;
+  padding: 4rem 40rem 4rem 4rem;
 }
 
 /* SCROLL BAR */
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -191,7 +192,7 @@ a {
 
 p {
   font-size: 2rem;
-  line-height: 1.7;
+  line-height: 2;
 }
 
 aside p {
@@ -287,6 +288,10 @@ article.post pre span {
   width: 100%;
 }
 
+.post .content {
+  margin-top: 4em;
+}
+
 /* BUTTONS */
 button {
   background-color: transparent;
@@ -327,4 +332,107 @@ button.icon span {
   width: 100%;
   height: auto;
   border-radius: 50%;
+}
+
+@media (max-width: 1281px) {
+  main {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 769px) {
+
+  /* STRUCTURE */
+  .container section {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  aside {
+    order: 2;
+  }
+
+  main {
+    padding: 2rem;
+    overflow-y: unset;
+  }
+
+  /* POSTS */
+  .posts .post-summary {
+    padding-top: 0;
+  }
+
+  .posts .post-summary article {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .posts .post-summary article .info {
+    order: 2;
+  }
+
+  .posts .post-summary article .image-container {
+    margin: 0;
+  }
+
+  /* TYPOGRAPHY */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  article.post h6 {
+    margin-bottom: 1em;
+  }
+
+  h1,
+  article.post h1 {
+    font-size: 3rem;
+  }
+
+  h2,
+  article.post h2,
+  .posts article h2 {
+    font-size: 2.5rem;
+  }
+
+  .posts article h2 {
+    color: var(--primary-color);
+  }
+
+  h3,
+  article.post h3,
+  .posts article h3 {
+    font-size: 2rem;
+  }
+
+  h4,
+  article.post h4 {
+    font-size: 2rem;
+    font-weight: normal;
+  }
+
+  h5,
+  article.post h5 {
+    font-size: 1.5rem;
+  }
+
+  article.post h6 {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  article.post h6:not(.date) {
+    margin-top: 0;
+  }
+
+  p,
+  article.post pre span {
+    font-size: 1.5rem;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
 }

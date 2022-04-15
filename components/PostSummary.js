@@ -7,14 +7,15 @@ const PostSummary = ({ title, description, image, time, link }) => {
       <a title={title}>
         <div className='post-summary'>
           <article>
-            <div>
+            <div className='info'>
               <h4>{time}</h4>
               <h2>{title}</h2>
               <h3>{description}</h3>
             </div>
-            <div className='image-container'>
-              {image && <img alt={`${title} | Image cover`} src={image} />}
+            {image && <div className='image-container'>
+              <img alt={`${title} | Image cover`} src={image} />
             </div>
+            }
           </article>
         </div>
       </a >
