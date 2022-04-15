@@ -1,9 +1,3 @@
-/* FONTS */
-@font-face {
-  font-family: 'Milka';
-  src: url('/fonts/milka.ttf');
-}
-
 /* GENERAL */
 * {
   box-sizing: border-box;
