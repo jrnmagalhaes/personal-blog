@@ -2,6 +2,7 @@
 title: DevOps — Visão geral
 description: O que é? O que faz? Como funciona? Do que se alimenta? Sexta, no Globo Reporter!
 image: images/devops-visao-geral.png
+image_caption: Source da imagem vai aqui
 ---
 
 ## Dívida técnica

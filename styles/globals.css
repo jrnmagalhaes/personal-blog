@@ -21,6 +21,7 @@ body {
   --secondary-color: #8C503A;
   --text-color: #052533;
   --color-contrast: #FAF2EC;
+  --gray: #787471;
   --header-height: 7rem;
   color: var(--text-color);
   background-color: var(--color-contrast);
@@ -244,7 +245,7 @@ article.post h6 {
 }
 
 article.post h6.date {
-  color: #787471;
+  color: var(--gray);
 }
 
 article.post pre span {
@@ -290,7 +291,22 @@ article.post pre span {
 
 .post {
   margin-top: 4em;
+  display: flex;
+  flex-direction: column;
 }
+
+.post figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post figure figcaption {
+  font-size: 2em;
+  color: var(--gray);
+}
+
+.post img {}
 
 .post .content {
   margin-top: 4em;

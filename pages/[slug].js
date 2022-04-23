@@ -19,6 +19,10 @@ const PostPage = ({ meta, date, content }) => {
         <article className='post'>
           <h1>{meta.title} <br /> <small>{meta.description}</small> </h1>
           <h6 className='date'>{date}</h6>
+          {meta.image && <figure className='imageContainer'>
+            <img src={meta.image} alt="Imagem do post" />
+            {meta.image_caption && <figcaption>{meta.image_caption}</figcaption>}
+          </figure>}
           <div className='content' dangerouslySetInnerHTML={{ __html: content }}></div>
         </article>
       </main>
