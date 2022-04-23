@@ -288,6 +288,10 @@ article.post pre span {
   width: 100%;
 }
 
+.post {
+  margin-top: 4em;
+}
+
 .post .content {
   margin-top: 4em;
 }

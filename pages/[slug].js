@@ -1,10 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from "next/router"
 import { getAllDocs, getDocBySlug } from '../lib/docs';
 import markdownToHtml from '../lib/markdown';
 import { formatDate } from '../lib/utils';
+import { IconButton } from '../components';
 
 const PostPage = ({ meta, date, content }) => {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -12,6 +15,7 @@ const PostPage = ({ meta, date, content }) => {
         <meta name="description" content={meta.description} />
       </Head>
       <main>
+        <IconButton iconName='back' onClick={() => router.back()} />
         <article className='post'>
           <h1>{meta.title} <br /> <small>{meta.description}</small> </h1>
           <h6 className='date'>{date}</h6>
