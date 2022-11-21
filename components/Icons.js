@@ -51,7 +51,7 @@ const Moon = () => {
 const Logo = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24">
-      <text id="RN" transform="translate(0 19)" fill="#bf6415" font-size="17" font-family="Milka-Regular, Milka"><tspan x="0" y="0">RN</tspan></text>
+      <text id="RN" transform="translate(0 19)" fill="#bf6415" fontSize="17" fontFamily="Milka-Regular, Milka"><tspan x="0" y="0">RN</tspan></text>
     </svg>
   )
 }

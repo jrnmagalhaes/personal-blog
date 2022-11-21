@@ -299,17 +299,43 @@ article.post pre span {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 4rem 0;
 }
 
 .post figure figcaption {
   font-size: 2em;
   color: var(--gray);
+  margin-top: 1em;
 }
 
-.post img {}
+.post img {
+  max-width: 100%;
+}
 
 .post .content {
   margin-top: 4em;
+}
+
+/* TABLES */
+table {
+  width: 100%;
+  font-size: 2rem;
+  border-collapse: collapse;
+}
+
+table thead tr th {
+  border-bottom: 1px solid var(--gray);
+  color: var(--primary-color);
+  white-space: nowrap;
+}
+
+table thead tr th,
+table tbody tr td {
+  padding: .5rem 2rem;
+}
+
+table tbody tr td.value {
+  white-space: nowrap;
 }
 
 /* BUTTONS */
